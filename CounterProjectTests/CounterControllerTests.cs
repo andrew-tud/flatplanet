@@ -54,7 +54,7 @@ namespace CounterProjectTests
                 Name = "Name 1",
                 Counter1 = 1
             };
-
+            _counterRepositoryMock.Setup(x => x.GetCounterByID(1)).Returns(counter);
             _counterRepositoryMock.Setup(x => x.AddToCounterByID(1, 1)).Returns(counter);
 
             //act
