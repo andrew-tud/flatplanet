@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CounterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Counter">
+    <Key>
+      <PropertyRef Name="CounterID" />
+    </Key>
+    <Property Name="CounterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Counter1" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CounterEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Counters" EntityType="Self.Counter" />
+  </EntityContainer>
+</Schema>
