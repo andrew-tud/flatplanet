@@ -29,7 +29,11 @@ namespace CounterProject.Controllers
 
         public CounterViewModel Get(int id)
         {
-            Counter counter = _counterRepository.AddToCounterByID(1, id);
+            Counter counter = _counterRepository.GetCounterByID(1);
+            if (counter.Counter1 < 10)
+            {
+                counter = _counterRepository.AddToCounterByID(1, id);
+            }
             CounterViewModel counterVM = Mapper.Map<Counter, CounterViewModel>(counter);
             return counterVM;
         }
